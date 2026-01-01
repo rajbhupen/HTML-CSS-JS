@@ -1,0 +1,373 @@
+/*
+
+COMMANDS
+
+-  name.toUpperCase()
+-  name.toLowerCase()
+-  console.log("") is used only by the developers for debugging not seen by a user who visits the webpage while alert("") creates a pop-up for a user.
+-  function getMilk(){
+
+}
+
+*/
+
+1. alert(""); 
+
+2. prompt(); //take input from user
+
+3. console.log();
+
+4. var message = "Hello";
+   var myName = "Raj";
+   alert(message + " " + myName);//string concatenation
+
+5. TWEET COUNT
+
+ var para = prompt("Enter your message");//Compose your tweet
+ var textLength = para.length; // .length is already a number.
+ var remainingLength = 148 - textLength; // "-" always tries to convert both sides to numbers.
+ var alertMessage = "You have written " + textLength + "characters, you have " + remainingLength + "left.";
+ alert(alertMessage);
+   
+6. SLICING
+
+ var myName = "Raj";
+ name.slice(0,1); //"R"
+ name.slice(2,1); //"J"
+ name.slice(0,2); //"Ra"
+
+var tweet = prompt("Compose your tweet");//
+var tweetunder148 = tweet.slice(0,148); 
+alert(tweetunder148); 
+
+7. CHANGING STRING CASING
+
+//Create a variable to store the name taht the user enters via prompt.
+var name = prompt("What is your name?");
+//Isolate the first char
+var firstChar = name.slice(0,1);
+//Turn the first char to upper case
+var upperCaseFirstChar = firstChar.toUpperCase();
+//Isolate the rest of the name
+var restOfName = name.slice(1,name.length);
+restOfName = restOfName.toLowerCase();
+//Concatenate the first char with rest of the char
+var capitalisedName = upperCaseFirstChar + restOfName;
+alert("Hello " + capitalisedName);
+
+8. Basic Arithmetic [87]
+
+// humanAge = (dogAge-2)*4 + 21
+var dogAge = prompt("What is your dog's age ?");
+var humanAge = ((dogAge - 2) * 4) + 21;
+alert("The corresponding human age is " + humanAge);
+
+9. INCREMENT / DECREMENT EXPRESSION [88]:
+
+var x = 3;
+var y = x++;//y is 3 (before increment)
+y += 1;
+Here y = 4 not 5;
+
+
+
+
+9. Functions: Three types: 1. no input parameters no return values,
+   	      	    	   2. input paramter used inside the function
+			   3. function returns a value.
+
+function bmiCalculator(weight,height){
+var bmi = weight / (height*height); //Math.pow(height,2)
+return Math.floor(bmi);//Math.round(bmi)
+}
+
+10. Random No. [99]
+//Dice Example
+var n = Math.random(); // generates random no. between 0 to 1 but not 1 less than 1
+n = n * 6;//scale it 0 to 5.999
+n = Math.Floor(n) + 1; 1 to 6
+console.log(n);
+//Love Calculator
+
+prompt("Enter Name of person 1");//Not saving since not utilised in the code
+prompt("Enter Name of person 2");
+var loveScore = 100*Math.random();
+alert("Your love Score is " + Math.floor(loveScore + 1) + "%.");//1-100%
+
+//Getting a random number between two values min, max [>=min but < max]
+
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+//Getting a random integer between two values
+Note: Simple rounding doesnt work as it results in non-uniform distribution
+function getRandomInt(min, max) {
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
+}
+
+//Getting a random integer between two values, inclusive
+
+function getRandomIntInclusive(min, max) {
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+  // The maximum is inclusive and the minimum is inclusive
+}
+
+11. Control Statements if and else [100]
+
+if(track === "clear"){
+  goStraight();
+} else {
+  turnRight();
+}
+
+Example:
+prompt("Enter Name of person 1");//Not saving since not utilised in the code
+prompt("Enter Name of person 2");
+var loveScore = 100*Math.random();
+
+if(loveScore > 70){
+alert("Your love Score is " + Math.floor(loveScore + 1) + "%. Your love is endless.");//1-100%
+} else{
+alert("Your love Score is " + Math.floor(loveScore + 1) + "%.");//1-100%
+}
+
+12. Comparatore and equality [101]
+
+=== is equal to (triple equal also checks for data types, With == it doesnt care about data type)
+!== is not equal to
+> is greater than
+< is less than
+>= is gretaer than or equal to
+<= is less than or equal to
+
+var a = 1; //type is number 
+var b = "1";//type is string
+
+if(a === b){
+console.log("YES");
+} else {
+console.log("NO");
+}
+> No
+
+if(a == b){
+console.log("YES");
+} else {
+console.log("NO");
+}
+> YES
+
+
+13. Combining Comparators [102]
+
+&& AND
+|| OR
+! NOT
+
+Example:
+prompt("Enter Name of person 1");//Not saving since not utilised in the code
+prompt("Enter Name of person 2");
+var loveScore = 100*Math.random();
+
+if(loveScore > 70){
+alert("Your love Score is " + Math.floor(loveScore + 1) + "%. Your love is endless.");//1-100%
+}
+
+if(loveScore <=70 && loveScore > 30){
+alert("Your love Score is " + Math.floor(loveScore + 1) + "%.");//1-100%
+}
+
+if(loveScore <= 30){
+alert("Your love Score is " + Math.floor(loveScore + 1) + "%. You go together like oil and water.");//1-100%
+}
+
+Example: BMI Advanced
+
+function bmiCalculator(weight,height){
+var bmi = weight / (height*height); //Math.pow(height,2)
+ bmi = Math.round(bmi);
+ var interpretation ="";
+if(bmi > 24.9){
+interpretation = "Your BMI is " + bmi + ", so you are overweight."
+}
+if(bmi <= 24.9 && bmi > 18.5){
+interpretation = "Your BMI is " + bmi + ", so you have a normal weight."
+}
+if(bmi < 18.5){
+interpretation = "Your BMI is " + bmi + ", so you are underweight."
+}
+
+return interpretation;
+}
+
+Challenge: LEAP YEAR
+A year is a leap year if it is evenly divisible by 4 ;
+except if that year is also evenly divisible by 100;
+unless that year is also evenly divisible by 400.
+
+function isLeap(year){
+
+if(year%4 == 0){
+  if(year%100 == 0){
+    if(year%400 == 0){
+      return "Leap year."
+}else{
+  return "Not leap year.";
+}
+  }else{
+  return "Leap year.";
+}
+}else{
+return "Not leap year."
+}
+
+}
+
+14. Javascript Arrays [103]
+
+var guestList = ["Angela", "Jack", "Pam", "James", "Lara", "Jason"];
+var guestName = prompt("Enter your name");
+if(guestList.includes(guestName)){//this evaluates to either true or false
+alert("Welcome" + guestName.);
+}else{
+alert("You are not invited");
+}
+
+
+guestList.push() guestList.pop() add or remove element from the array
+Q. Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
+
+//Adding numbers in array
+var output = [];
+var num = 1;
+var count = 1;
+
+function fizzBuzz() {
+if(count%3==0){
+num = "Fizz";
+}
+if(count%5==0){
+num = "Buzz";
+}
+if(count%3==0 && count%5==0){
+num = "FizzBuzz";
+}
+
+
+output.push(num);
+console.log(output)
+count++;
+num = count;
+}
+
+
+function fizzBuzz() {
+
+if(count%3===0 && count%5===0){
+output.push("FizzBuzz");
+}
+else if(count%3===0){
+output.push("Fizz");
+}
+else if(count%5===0){
+output.push("Buzz");
+}
+else{
+output.push(count);
+}
+count++;
+
+}
+Q. Who's Buying Lunch? Code Challenge
+Example Input
+
+    ["Angela", "Ben", "Jenny", "Michael", "Chloe"]
+
+Example Output
+
+    Michael is going to buy lunch today!
+    
+   function whosPaying(names) {	
+   var rand = names.length * Math.random();
+   rand = Math.floor(rand);
+   var message = names[rand] + " is going to buy lunch today!";
+   return message;
+}
+
+
+14. While Loops [108]
+var output = [];
+var count = 1;
+    function fizzBuzz() {
+while(count <= 100){
+if(count%3===0 && count%5===0){
+output.push("FizzBuzz");
+}
+else if(count%3===0){
+output.push("Fizz");
+}
+else if(count%5===0){
+output.push("Buzz");
+}
+else{
+output.push(count);
+}
+count++;
+}
+console.log(output);
+}
+
+Q. Print lyrics of the song 99 bottle of beer
+
+function beer(){
+
+numberOfBottles = 99;
+
+while(numberOfBottles <= 0){
+
+console.log(numberOfBottles + "bottles of beer on the wall, " + numberOfBottles + "bottles of beer.");
+console.log("Take one down and pass it around, " + numberOfBottles-1 + "bottles of beer on the wall.");
+console.log("");
+numberOfBottles--;
+
+}
+
+
+}
+Q. Fibonacci Exercise
+
+function fibonacciGenerator (n) {
+//Do NOT change any of the code above 
+    
+    //Write your code here:
+var output = [];
+    if(n==1){
+    output = [0];
+}
+else if(n==2){
+output = [0,1];
+}
+else{
+
+output = [0,1];
+   
+for(var ij=0;ij<n-2;ij++){		
+    var next = output[ij] + output[ij+1];
+    output.push(next);
+}
+}    
+    
+    
+    
+    //Return an array of fibonacci numbers starting from 0.
+
+    return output;
+    
+//Do NOT change any of the code below 
+}
+

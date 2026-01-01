@@ -1,0 +1,306 @@
+////////////////
+// HTML defines the content and structure of a website. (HTML5)
+//////////////
+HTML stands for Hypertext Markup Language
+
+Hypertext: pieces of text which contain link to other text thus connecting webpages to one another, either within a single website or between websites.
+
+Markup Language: bold, italic, underlin... HTML uses Tags  to markup/anonate texts, images or contents like- <h1>, <p>, <b>, etc
+
+1. HTML Heading Elements [13]:
+
+<h1> Hello World </h1>
+
+<h1> is opening tag.
+Hello World is the content of the tag.
+</h1> is closing tag contains forward slash.
+
+Anything between <> is called "Tag".
+while the entire "<h1> Hello World </h1>" is called "Element".
+There are 6 heading elemets:
+<h1> Heading 1 </h1>
+<h2> Heading 2 </h2>
+<h3> Heading 3 </h3>
+<h4> Heading 4 </h4>
+<h5> Heading 5 </h5>
+<h6> Heading 6 </h6>
+ No <h7> exists.
+
+Exercise: Book/Thesis Index
+
+<h1> Book </h1>
+  <h2> Chapter 1 </h2>
+    <h3> Section 1 </h3>
+    <h3> Section 2 </h3>
+
+  <h2> Chapter 2 </h2>
+    <h3> Section 1 </h3>
+      <h4> Diagram 1 </h4>
+
+  <h2> Chapter 3 </h2>
+    <h3> Section 1 </h3>
+    <h3> Section 2 </h3>
+
+
+2. HTML Paragraph Elements [14]:
+
+Adds a line between two paragraph elements.
+
+Code:
+<p> First Paragraph </p>
+<p> Second Paragraph </p>
+<p> Third Paragraph </p>
+
+Output:
+First Paragraph
+
+Second Paragraph
+
+Third Paragraph
+
+
+3. Self Closing Tags [15]:
+Void Elements, elements with no contents between opening and closing tags. Infact the tags itself is different: <hr /> (Horizontal rule element).
+<p> First Paragraph </p>
+<hr />
+<p> Second Paragraph </p>
+
+Output:
+First Paragraph
+
+-------------------------------------------------------------------------
+
+Second Paragraph
+
+Break Element <br />:
+Poems for example contains different lines all in same paragraph in order for rhyming to work. <br /> is used to add new line.
+
+<p>
+To see a World in a Grain of Sand <br /> And a Heaven in a Wild Flower,<br /> Hold Infinity in the palm of your hand<br /> And Eternity in an hour.
+<p>
+
+Output:
+
+To see a World in a Grain of Sand
+And a Heaven in a Wild Flower,
+Hold Infinity in the palm of your hand
+And Eternity in an hour.
+
+Project: Favourite Movie Ranking
+
+<h1>The Best Movies According to Raj</h1>
+<h2>My top 3 movies of all-time.</h2>
+<hr />
+
+<h3>Spirited Away</h3>
+<p>This is my favourite anime. I love the beautiful images.</p>
+<h3>Ex Machina</h3>
+<p>Really cool sci-fi movie.</p>
+<h3>Drive</h3>
+<p>Super beautiful film. Really artistic.</p>
+
+
+
+4. The List Element [18]:
+
+Unordered list: Gives bullet points
+
+<ul>
+<li>Milk</li>
+<li>Eggs</li>
+<li>Flour</li>
+</ul>
+
+<ul> List Items </ul>
+
+Ordered list: Gives numbers
+
+<ol>
+<li>Milk</li>
+<li>Eggs</li>
+<li>Flour</li>
+</ol>
+
+Exersice:
+<h1>Angela's Cinnamon Roll Recipe</h1>
+
+<h2>Ingredients</h2>
+
+<h3>For the dough:</h3>
+<ul>
+<li>¾ cup warm milk</li>
+<li>2 ¼ teaspoons yeast</li> 
+<li>¼ cup granulated sugar</li>
+<li>1 egg plus 1 egg yolk</li>
+<li>¼ cup butter</li>
+<li>3 cups bread flour</li>
+</ul>
+
+<h3>For the filling:</h3>
+<ul>
+<li>2/3 cup dark brown sugar</li> 
+<li>1 ½ tablespoons ground cinnamon</li>
+<li>¼ cup butter</li>
+</ul>
+
+<h2>Instructions</h2>
+<ol>
+<li>Mix the milk with the yeast, sugar, eggs.</li>
+<li>Melt the butter and add to the mixture.</li>
+<li>Add in the flour and mix until combined into a dough.</li>
+<li>Knead the dough for 10 minuites. </li>
+<li>Transfer the dough into a large bowl and cover with plastic wrap. Leave it somewhere to rise for 2 hours.</li>
+<li>After the dough has doubled in size, roll it out into a large rectangle. </li>
+<li>Melt the butter for the filling and mix in the sugar and cinnamon.</li>
+<li>Spread the filling onto the dough then roll the dough into a swiss roll.</li> 
+<li>Cut the roll into 3cm sections and place flat into a baking tray.</li>
+<li>Pre-heat the oven to 350F or 180C, then bake the rolls for 20-25min until lightly brown.</li>
+</ol>
+
+5. Nesting and Indentation: [19]
+
+Example:
+<ul>
+  <li>Wake up and brush teeth</li>
+  <li>Drink 500ml warm water</li>
+  <li>Do yoga for an hour</li>
+  <li>Make omelette
+    <ul>
+      <li>Whisk eggs with milk</li>
+      <li>Add butter to pan</li>
+      <li>Add in eggs and stir</li>
+      <li>When solid add salt</li>
+    </ul>
+  </li>
+  <li>Start work</li>
+</ul>
+
+Exercise:
+
+<ul>
+  <li>A</li>
+  <li>B
+    <ol>
+      <li>B1</li>
+      <li>B2
+        <ul>
+        <li>B2a
+          <ul>
+	    <li>B2aa</li>
+	    <li>B2ab</li>
+	  </ul>
+        </li>
+        <li>B2b</li>
+        <li>B2c</li>  
+        </ul>
+      </li>
+      <li>B3
+        <ol>
+          <li>B31</li>
+          <li>B32</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>C</li>
+</ul>
+
+6. Anchor Elements [20]:
+<a>This is a link</a> {Not active hyperlink, need additional attribute.}
+<a href="http://www.google.com">This is a link</a> {Attribute href goes in the opening tag}
+<tag attribute=value>Content</tag>
+<tag attribute=value anotherattribute=value >Content</tag>
+
+Example:
+<a draggable=true href="http://www.google.com">This is a link</a> {Attribute href goes in the opening tag}
+
+Exercise: My top 5 Favourite Websites
+
+<h1>My top 5 Favourite Websites</h1>
+<ol start="5">
+ <li><a href="http://www.producthunt.com">Product Hunt</a></li>
+ <li><a href="http://www.smashthewalls.com">Smash the Walls</a></li>
+ <li><a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a></li>
+ <li><a href="https://hackertyper.net/">Hacker Typer</a></li>
+ <li><a href="https://stellarium-web.org/">Stellarium</a></li>
+</ol>
+
+Attributes of <ol>
+
+value
+
+    This integer attribute indicates the current ordinal value of the list item as defined by the <ol> element. The only allowed value for this attribute is a number, even if the list is displayed with Roman numerals or letters. List items that follow this one continue numbering from the value set. This attribute has no meaning for unordered lists (<ul>) or for menus (<menu>).
+
+start
+An integer to start counting from for the list items. Always an Arabic numeral (1, 2, 3, etc.), even when the numbering type is letters or Roman numerals. For example, to start numbering elements from the letter "d" or the Roman numeral "iv," use start="4".
+
+type
+
+    Sets the numbering type:
+
+        a for lowercase letters
+        A for uppercase letters
+        i for lowercase Roman numerals
+        I for uppercase Roman numerals
+        1 for numbers (default)
+
+
+7. Image Element (Self closing tag like <hr /> or <br />)
+<img src="https://picsum.photos/200" alt="" /> {200 is size in pixels}
+alt: alternative text description needed for screen reader or for visually imparired reader.
+
+Exercise:
+<h1>I am a Cat Person</h1>
+<img src="https://raw.githubusercontent.com/appbrewery/webdev/main/kitten.jpeg" alt="person holding a cat" />
+
+
+Project:
+
+<h1>It's My Birthday!</h1>
+<h2>On the 12th May</h2>
+<img src="https://raw.githubusercontent.com/appbrewery/webdev/main/birthday-cake3.4.jpeg" alt="birthday cake" />
+<h3>What to bring:</h3>
+<ul>
+  <li>Ballons(I love baloons)</li>
+  <li>Cake (I'm really good at eating)</li>
+  <li>An appetite (There will be lots of food)</li>
+  </ul>
+<h3>This is where you need to go:</h3>
+<a href="https://www.google.com/maps/@35.7040744,139.5577317,3a,75y,289.6h,87.01t,0.72r/data=!3m6!1e1!3m4!1sgT28ssf0BB2LxZ63JNcL1w!2e0!7i13312!8i6656">Google map link</a>
+
+8. Webpages [26]
+
+<h1>Welcome to My Website!</h1>
+<!-- Add an image of yourself that links to the about page -->
+<a href="./public/about.html"> <img src="./assets/images/cat.png" /></a>
+<hr />
+<!-- Add a link to your contact me page here -->
+<a href="./public/contact.html">Contact Me</a>
+
+9. HTML Boiler Plate [27]
+
+<!DOCTYPE html> //Tells the browser which version of HTML
+<html lang="en"> //root of the document. Setting language to english (useful for screen reader)
+  <head>
+    <meta charset="UTF-8">
+    <title>My Website</title>//gets displayed in the tab menu
+  </head>
+
+  <body>
+    <h1>Hello World!</h1>
+  </body>
+</html>
+
+
+
+Inside head importatnt information about the website it placed. Nothing here is visible to users.
+It helps website render in the browser correctly. Doesnt include text or images.
+
+
+
+Resources:
+diffchecker.com
+
+
+To comment line in html use: <!-- comment -->
+

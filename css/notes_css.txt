@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang"en">
+<head>
+<meta charset="UTF-8">
+<title>My Website</title>
+</head>
+<body>
+<h1>Hello World</h1>
+</body>
+</html>
+
+/////////////////////////////////
+// CSS Cascading style sheets
+//////////////////////////////
+Why Cascading: The way style is applied is like a cascade: Styling starts from most general all the way down to specific elements.
+Cascade means water flowing down in stages
+CSS allows to seperate styling from the main content that is HTML.
+
+1. How to Add CSS. [33]
+
+3 ways of adding CSS to a website: Inline, Internal and External
+
+a) Inline:
+<html style="background:blue"> //can be added to other any tag <h1>, etc
+</html>
+[Tedious & not recomended]
+
+b) Internal:
+Inside head
+
+<style>
+html{ //selector
+background:red;//css
+}
+</style>
+
+c) External:
+Styling is applied using external file "style.css".
+
+
+Inside style.css
+html{
+background:green;
+}
+
+How to link ?
+
+Inside head 
+<link rel="stylesheet" href="./style.css"/> //rel=relation
+
+Example: Refer "./addCSS/index.html"
+
+
+
+2. CSS Selector: 4 types of selectors:
+css: color:blue. Here color is property and blue is value
+Css selector selects tags in html to apply different styles to them.
+
+h1{
+color:blue;
+}
+This selects all h1 and modifies the text color to blue
+
+>index.html
+<h2>Red</h2>
+<h2>Green</h2>
+<h2>Blue</h2>
+>styles.css
+h2{
+color:red;
+}
+
+This will color all h2 to red.To select specific text one can use class selector. One can add class attribute to any element:
+-Class selector
+
+>index.html
+<h2 class="red-text">Red</h2>
+<h2>Green</h2>
+<h2>Blue</h2>
+>styles.css
+.red-text{
+color:red;
+}
+This is just turn text color of "Red" red.
+
+- Id Selector: It can be applied to justone element in the html file while class selector can be applied to many.
+>index.html
+<h2 id="main">Red</h2>
+<h2>Green</h2>
+<h2>Blue</h2>
+>styles.css
+#main{
+color:red;
+}	
+- Attribute selector
+p[draggable]{
+color:red;
+}
+This selects all paragraph tags with attribute draggle set to true and modifies its text color to red.
+<p draggable="true">Drag me</p>
+<p draggable="false">Don't Drag me</p>
+<p draggable="false">Don't Drag me</p>
+
+Now to select elements with draggable set to false:
+
+p[draggable="false"]{
+color:red;
+}
+
+- Universal Selector: selects all the html element.
+*{
+color:red;
+}
+Check "./CSSSelector/index.html" for practice example.
+
+Project: Color Colab Project see "./ColorColabProject".
+
+
+3. CSS Colors [38]:
+Refer to colorhunt.co for wide range of color pallettes to choose from using there hex codes.
+h1{
+  color: whitesmoke;
+  background-color: darkseagreen;
+}
+h2{
+  color: #FAF8F1;
+  background-color: #C58940;
+}
+
+
+4. Font Properties [39]:
+h1{
+	color: blue;//text-color
+	font-weight: bold;
+	font-size: 20px;
+	font-family: sans-serif;
+
+}
+
+ What is 20px ? 1px = 1/96 inch. (1 inch = 0.26 mm).
+
+1 pt = 1/72 inch (slightly bigger than pixel) used in to MS Word
+
+1 em = 100% size of parent element:
+<body> If this was 20px.
+<h1> Hello</h1> and this is 1 em then it will be same as body text size 20px
+</body>
+
+
+1 rem =  100 % of root element i.e. is html tag. If em is used then if the parent font size is changed then the text size will also change. Better to use 1rem for fonts.
+
+ 
+font-family:
+h1{
+font-family: Helvetica, sans-serif; //here 2nd family sans-serif is for backup in case helvetica is not supported by the windows.
+}
+
+h2{
+font-family: "Times New Roman", serif; Since times new roman have space in between use ""
+}
+sans-serif has all edges of the font are at right angle while in serif it has feets.
+
+Refer font.google.com to choose different font.
+
+Alignment:
+
+h1{
+  text-align: center; //left or right
+}
+
+Summary (CSS text properties):
+
+color:
+font-size:
+font-weight:
+font-family:
+text-aling:
+
+4. Box Model: [41]
+
+Each HTML element is embedded in a box. One can change its width and height using pixel unit or using percentage:
+height: 600px;
+width: 600px;
+or
+width: 100%;
+
+//BORDER:
+
+Each of this box or html element also has a border: It takes 3 values seperated by space:
+border: 10px solid black
+(solid or dashed)
+Note: The height and width doesnt change since the border goes outwards i.e. away from that element
+ To remove top border: border-top: 0px;
+ or
+ border-width: 0px 10px 20px 30px (top right bottom left) [4 values]
+ or 	       
+ border-width: 0px 10px (top-bottom right-left) [2 values]
+
+//Padding:
+Padding introduces space/gap between border and the contents of the element
+padding: 20px// introduces 20px gap in all 4 directions
+
+Again height and width of the element doesnt change.
+Margin is outside the border
+margin: 10px
+
+Padding, Margin, Border-width all can take 4 values corresponding to 4 sides.
+Run these to get idea of the box model
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BOX MODEL</title>
+<style>
+p{
+margin:10px;
+padding: 20px;
+border: 10px solid black;
+background-color: blue;
+}
+</style>
+</head>
+
+<body>
+<p>Hello world, Hello world, Hello world, Hello world, Hello world, Hello world, Hello world, Hello world, Hello world</p>
+</body>
+
+</html>
+
+
+//Division Element
+Suppose you have an image and its caption and we would like to group together to apply same css this can be done using <div>. This will wrap a box around both of this. It is invisible unless css is applied.
+It acts as container to group mulitple elements usfull for styling them together
+Div can be activated using chromve extension "pesticide" https://chromewebstore.google.com/detail/pesticide/bakpbgckdnepkmkeaiomhmfcnejndkbi?pli=1
+<body>
+<div>
+<p>Hello World</p>
+<img src="./world.png">
+</div>
+
+<div>
+<p>Good Night World</p>
+<img src="./night-world.png">
+</div>
+</body>
+
+
+Checkout exercise: ./CSSBoxModel
+  <!-- TODOs:
+1. Create 3 Boxes using the div element.
+2. Set their sizes to 200px heigh by 200px wide.
+3. Set different background colors for each of the boxes (I used cadetblue, gold and indianred).
+4. Add a paragraph <p> element into the first div and add the following words:
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at sapien porttitor urna elementum lacinia. In
+    id magna pulvinar, ultricies lorem id, vehicula elit. Aliquam eu luctus nisl, vitae pellentesque magna. Phasellus
+    dolor metus, laoreet ac convallis sit amet, efficitur sed dolor.
+5. Set the 1st div to have 20px padding all around with a black 10px border.
+6. Fix the style of the <p> element to remove all margins.
+Hint: Use the CSS inspector in Chrome.
+7. Set the 2nd div to have a 20px border on top and bottom and 10px border left and right. (See goal image)
+8. Set the 3rd div to have a 10px border 
+9. Set the margins for the divs so that each box corner touches the other. (See the goal image)
+-->
+
+Note: <p> element intoduces padding need to check properly. Default it get 1em of margin. if margin is set to zero the height of <p> will still be determined by its content and content text size.Suppose there is a div with a paragraph element. Height and Width of div is 200px. Now margin of p is zero so width 200px but height depends on its content. If ony one line then heigh will be text size 18px default.
+
+Project: See ./MotivationMemeProject
+
+<!-- 
+  TODO: Create a motivational post website.
+Style it how ever you like. 
+Look at the goal image for inspiration.
+But it must have the following features:
+1. The main h1 text should be using the Regular Libre Baskerville Font from Google Fonts:
+  https://fonts.google.com/specimen/Libre+Baskerville
+2. The text should be white and background black.
+3. Add your own image into the images folder inside assets. It should have a 5px white border.
+4. The text should be center aligned.
+5. Create a div to contain the h1, p and img elements. Adjust the margins so that the image and text are centered on the page. 
+  Hint: You horizontally center a div by giving it a width of 50% and a margin-left of 25%.
+  Hint: Set the image to have a width of 100% so it fills the div. 
+6. Read about the text-transform property on MDN docs to make the h1 uppercase with CSS.
+  https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform 
+-->
+
+
+To transform text to uppercase use:
+text-transform: uppercase;
+text-transform: lowercase;
+text-transform: captialize;
+
+
+
+5. CSS Specificity and Inheritance [43]:
+
+When multiple CSS rules target the same HTML element, the browser follows certain rules to decide which style is applied.
+
+
+
+
+a) Position:
+The rule that is below/lower in external css file overrides the previous one.
+
+li{
+color: red;
+color: blue;
+}
+li{
+color: green;
+}
+
+In the first rule block, color: blue; overrides color: red; because it appears later within the same block. The second li rule appears lower in the CSS file, so it overrides all previous li color declarations.
+Final applied style: li color: green
+
+b) Specificity:
+CSS specificity determines which selector wins when multiple selectors target the same HTML element.
+
+<li id="first-id" class="first-class" draggable>
+
+    		     |  element selector -> li{color:blue;}
+		     |  class selector -> .first-class{color:red;}
+    	  	     |  attribute selector -> li[draggable]{color: purple;}
+ (Highest Priority)  V  id selector -> #first-id{color: orange;} 
+
+The text color of the <li> element will be orange, because the ID selector has the highest specificity among the applied selectors. This is also becase id selector is unique to an element.
+
+ID > attribute > class > element
+
+c) TYPE (CSS ways):
+
+First, the rules in external css file gets applied then the styles are overridden by internal rules then by inline css. See following example:
+
+>index.html
+<ol>
+<li>One</li>
+<li style="color:red">Two</li>
+<li>Three</li>
+</ol>
+
+>styles.css
+li{
+color:green;
+}
+
+>output
+1. One -> green (styled using external CSS)
+2. Two -> red (inline CSS overrides external CSS)
+3. Three -> green (styled using external CSS)
+
+Inline styles have the highest priority because again it targets only one element and override both internal and external CSS rules. Second is internal since it exists within that htmlfile and external css might be shared among multiple webpages.
+
+                      |  <link rel="stylesheet" href="./styles.css"> [external]
+		      |  <style> </style>			     [internal]
+  (Highest Priority)  V  <h1 style="color: red">Hello</h1>	     [inline]
+
+
+d) Importance
+
+color:red;
+color:green !important; Highest Priority
+
+See ./specificty.png
+
+Importance > type > specificity > position
+
+See ./CSSSelectors
